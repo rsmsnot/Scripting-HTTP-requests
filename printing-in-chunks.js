@@ -9,11 +9,13 @@ function getAndPrintHTMLChunks() {
 
     https.get(requestOptions, function(response) {
 
+        var buffer = ""
 
         response.setEncoding('utf8');
 
         response.on('data', function(data) {
-            console.log(data)
+            buffer += data;
+            console.log(buffer)
 
         });
     });
